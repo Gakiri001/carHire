@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/booking.css" />
+    <link rel="stylesheet" href="/styles/header.css" />
+    <link rel="stylesheet" href="/styles/Sidebar.css" />
+  </head>
+  <body>
+    <!--HEADER-->
+    <div class="header">
+      <div class="left-section">
+        <div class="hamburger_menu_container">
+          <img
+            class="hamburger_menu"
+            src="/car images/hamburger-menu.svg"
+            alt=""
+          />
+        </div>
+        <img class="car_hire_logo" src="/car images/carsoko.png" alt="" />
+      </div>
+      <div class="middle-section">
+        <input class="search-bar" type="text" placeholder="search" />
+        <button class="search_button">
+          <img class="search_icon" src="/car images/search.png" alt="" />
+        </button>
+      </div>
+      <div class="right-section">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">log_in</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!---SIDEBAR-->
+    <div class="sidebar">
+      <div class="sidebar-link">
+        <img src="/SideBar/Whatsapp2.png" alt="" />
+        <div>WhatsApp</div>
+      </div>
+      <div class="sidebar-link">
+        <img src="/SideBar/instagram.jpeg" alt="" />
+        <div>instagram</div>
+      </div>
+      <div class="sidebar-link">
+        <img src="/SideBar/facebook.png" alt="" />
+        <div>FaceBook</div>
+      </div>
+      <div class="sidebar-link">
+        <img src="/SideBar/twitter2.png" alt="" />
+        <div>Twitter</div>
+      </div>
+    </div>
+
+    <!--Content-->
+    <div class="Div_BOOKING_SUMMARY"><h4>BOOKING SUMMARY</h4></div>
+    <div class="main">
+      <div class="Main_I">
+        <div class="Div_car_name">
+          <p><b>Toyota Fortuner</b> or similar StationWagon- Automatic</p>
+        </div>
+        <div class="Div_image">
+          <img src="/car images/Toyota Fortuner.jpg" alt="" />
+        </div>
+      </div>
+      <div class="Main_II">
+        <div class="Div_booking">
+          <p>
+            <b>County</b> Murang,a
+            <!--Span-->
+            <span class="span_change"
+              ><button class="button_change" onclick="openPopup()">
+                change
+              </button>
+              <div class="popup" id="popup">
+                <div>
+                  <p><b>Enter your County</b></p>
+                </div>
+                <div>
+                  <input placeholder="Enter Your County" />
+                </div>
+                <div>
+                  <p><b>Pick up Location</b></p>
+                </div>
+                <div>
+                  <input
+                    id="InputPick"
+                    placeholder="Enter location for Pick Up"
+                    type="text"
+                  />
+                </div>
+                <div>
+                  <p><b>Rental start</b></p>
+                </div>
+                <div>
+                  <input
+                    onkeyup="calculateBill()"
+                    id="dateStart"
+                    placeholder="When do you want to hire"
+                    type="date"
+                  />
+                </div>
+                <div>
+                  <p><b>Rental End</b></p>
+                </div>
+                <div>
+                  <input
+                    onkeyup="calculateBill"
+                    id="dateEnd"
+                    placeholder="When to call off deal"
+                    type="date"
+                  />
+                </div>
+                <div>
+                  <p><b>Drop off Location</b></p>
+                </div>
+                <div>
+                  <input
+                    placeholder="Where can we pick our vehicle"
+                    type="text"
+                  />
+                </div>
+                <div>
+                  <p><b>PRICE</b></p>
+                </div>
+                <div id="price">Ksh0.00</div>
+                <button
+                  type="button"
+                  id="buttonOk"
+                  class="BtnGetDeal"
+                  style="width: 200px"
+                  onclick="closePopup()"
+                >
+                  Get The Deal
+                </button>
+              </div>
+            </span>
+            <!--Span-->
+          </p>
+          <script>
+            let popup = document.getElementById("popup");
+            function openPopup() {
+              popup.classList.add("open-popup");
+            }
+            function closePopup() {
+              popup.classList.remove("open-popup");
+            }
+          </script>
+
+          <p><b>Pick up Location:</b> <span id="PickUp">mut</span></p>
+          <script src="/project001/Hirer.js"></script>
+          <p>
+            <b>Rental start:</b>
+            <span id="dateStart">Tuesday 28<sup>th</sup> Feb 2023</span>
+          </p>
+          <p>
+            <b>Rental End:</b>
+            <span id="dateEnd">Sunday 5<sup>th</sup> March 2023</span>
+          </p>
+          <p><b>Drop Off Location:</b> <span id="DropOff">JKIA</span></p>
+          <p><b>PRICE</b> <span id="price">Ksh0.00</span></p>
+        </div>
+        <div class="div_security">
+          <p><b>Theft damage Excess Protection</b></p>
+        </div>
+        <div class="div_charge">
+          <h4>Optional extra</h4>
+          <p>No extra</p>
+        </div>
+      </div>
+    </div>
+
+    <br />
+    <div class="hirer_header"><h4>HIRER DETAILS</h4></div>
+    <form action="/project001/connect.php" method="post">
+      <div class="hirer_details">
+        <div class="first_column">
+          <div>
+            <p><b>Identification Number</b></p>
+          </div>
+          <div><input placeholder="Enter Your ID" type="text" name="id" /></div>
+          <div>
+            <p><b>First Name</b></p>
+          </div>
+          <div>
+            <input
+              placeholder="Enter first name"
+              type="text"
+              name="firstname"
+            />
+          </div>
+          <div>
+            <p><b>Second Name</b></p>
+          </div>
+          <div>
+            <input
+              placeholder="Enter Second name"
+              type="text"
+              name="Secondname"
+            />
+          </div>
+          <div>
+            <p><b>Driver's lincense NO</b></p>
+          </div>
+          <div>
+            <input
+              placeholder="Enter Your Driving lincence NO"
+              type="text"
+              name="DrivingLincence"
+            />
+          </div>
+        </div>
+
+        <div class="second_column">
+          <div>
+            <p><b>KRA Pin</b></p>
+          </div>
+          <div>
+            <input
+              id="InputPick"
+              placeholder="Enter Your KRA Pin"
+              type="text"
+              name="KRApin"
+            />
+          </div>
+          <div>
+            <p><b>Phone Number</b></p>
+          </div>
+          <div>
+            <input placeholder="Enter Phone NO" type="text" name="PhoneNo" />
+          </div>
+          <div>
+            <p><b>Email Address</b></p>
+          </div>
+          <div>
+            <input placeholder="Enter Email Address" type="text" name="email" />
+          </div>
+          <div>
+            <p><b>Purpose Hiring</b></p>
+          </div>
+          <div>
+            <input
+              placeholder="Specify/describe purpose of hiring"
+              type="text"
+              name="purpose"
+            />
+          </div>
+          <input type="submit" />
+        </div>
+      </div>
+    </form>
+
+    <br />
+    <div class="TermDiv">
+      <div class="DivCheckBox"><input type="checkbox" /></div>
+      <div><p>I agree with terms and conditions</p></div>
+    </div>
+  </body>
+</html>

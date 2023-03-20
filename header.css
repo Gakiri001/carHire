@@ -1,0 +1,103 @@
+.header{
+  height: 55px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 300;
+  background-color: rgb(163, 233, 172);
+  border-bottom-width: 1px;
+  border-bottom-style:solid;
+  border-bottom-color:rgb(228, 228, 228);
+}
+.left-section{
+  display: flex;
+  align-items: center;
+}
+.hamburger_menu{
+  height: 30px;
+  margin: 0px 24px;
+}
+.car_hire_logo{
+  height: 30px;
+}
+.middle-section{
+  flex: 1;
+  margin-left: 70px;
+  margin-right: 35px;
+  max-width: 500px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.search-bar{
+  flex: 1;
+  width: 0;
+  height: 37px;
+  padding-left: 12px;
+  font-size: 16px;
+  border: 1px rgb(192, 192, 192) solid;
+  border-radius: 4px;
+  box-shadow: inset 1px 2px 3px rgba(0, 0, 0, 0.5);
+}
+.search_button{
+  height: 40px;
+  width: 66px;
+  background-color: rgb(240, 240, 240);
+  border: 1px solid rgb(192, 192, 192);
+  margin-left: -1px;
+  margin-right: 10px;
+  }
+  .search_icon{
+    height: 20px;
+  }
+  .hamburger_menu_container,
+  .search_button{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .right-section button{
+    border:none;
+    border-radius: 10px;
+    background-color: red;
+    color: white;
+    width: 80px;
+    height: 35px;
+    cursor: pointer;
+    justify-content: center;
+  }
+  ul{
+    flex: 1;
+    text-align: right;
+  }
+  ul li{
+    display: inline-block;
+    list-style:none;
+    margin: 0 25px;
+  }
+  ul li a{
+    text-decoration: none;
+    color: black;
+    padding: 0 10px;
+    position: relative;
+  }
+  ul li a::after{
+    content: '';
+    width: 0px;
+    height: 10px;
+    background-color: #f14a60;
+    position: absolute;
+    left: 0px;
+    transform: tranlateX(-50%);
+    top: -20px;
+    transition: 0.5s;
+  }
+  ul li a:hover:after{
+    width: 100%;
+  }
